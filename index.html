@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2 class="title">Tidak bisa pilih 2 toggle</h2>
+    <span class="toggle-title">White</span>
+    <div id="toggle">
+      <i class="indikator"></i>
+    </div>
+    <span class="toggle-title">Green</span>
+    <div id="toggle2">
+      <i class="indikator2"></i>
+    </div>
+    <script>
+      const body = document.querySelector("body");
+      const toggle = document.getElementById("toggle");
+      const toggle2 = document.getElementById("toggle2");
+
+      toggle.onclick = function () {
+        if (!toggle2.classList.contains("active-green")) {
+          toggle.classList.toggle("active");
+          body.classList.toggle("active");
+        }
+      };
+
+      toggle2.onclick = function () {
+        if (!toggle.classList.contains("active")) {
+          toggle2.classList.toggle("active-green");
+          body.classList.toggle("active-green");
+        }
+      };
+    </script>
+  </body>
+</html>
